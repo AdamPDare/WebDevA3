@@ -165,7 +165,10 @@ div.card:hover{
         display:block;
         width: 100%;
     }
-    .verticalNav{
+    .overlay{
+        display:none;
+    }
+    span{
         display: none;
     }
     .footer{
@@ -176,17 +179,23 @@ div.card:hover{
 
 @media screen and (max-width: 1100px){
     
-    .overlay a{
-        font-size: 20px;
+    .overlay{
+        display:block;
+    }
+    span{
+        display: block;
+    }
+    .overlay {overflow-y: auto;}
+    .overflow a {font-size: 20px}
+    .overflow .closebtn{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
     }
     .HorizontalNav{
         display:none;
     }
-    .verticalNav{
-        display:block;
-        width: 100%
-    
-    }
+   
     .leftcolumn, .rightcolumn{
         width: 100%;
         padding: 0;
