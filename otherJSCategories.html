@@ -4,11 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1">
         <title>Other JS Categories</title>
-        <link href="layoutsheet.css" rel="stylesheet">
+        
+        <style>
+            body{
+                background-color: white;
+            }
+        </style>
 
     </head>
-
-    <body onload="checkCookie()">
+    <body>
         <p>Click on the button to detect current browser</p>
 
         <p>
@@ -32,6 +36,7 @@
             <span class="output-opera"></span>
         </p>
         <button onclick="checkBrowser()">Detect Button</button>
+
         <script>
             function checkBrowser(){
                 let userAgentString= navigator.userAgent;
@@ -58,17 +63,14 @@
                 document.querySelector(".output-firefox").textContent=firefoxagent;
             }
         </script>
+   
 
-        <div class="footer">
-            <h2>
-                This is Adam Dare's Webpage. 
-            </h2>
-            <p>If you want to use any of the information provided</p>
-            <address>
-                Contact <a href="mailto:420874@edu.cwa.ac.uk">Adam Dare</a><br>
-            </address>
-        </div>
-        <script type="text/javascript" src="jsExternal.js"></script>
+   
+
+        
+
+        
+        
 
     </body>
     
