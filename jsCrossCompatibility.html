@@ -11,6 +11,10 @@
         <style>
             img{
                 padding: 30px;
+                
+            }
+            .imgTitle{
+                text-align: center;
             }
 
         </style>
@@ -43,8 +47,8 @@
                         Microsoft Edge.
                     </p>
 
-                    <img src="browserDetectionFailinginIE.PNG" alt="BDIE" width="250" height="250">
-                    <img src="bdWorkingOnME.PNG" alt="BDME" width="250" height="250">
+                    <img src="browserDetectionFailinginIE.PNG" alt="BDIE" width="300" height="300">
+                    <img src="bdWorkingOnME.PNG" alt="BDME" width="300" height="300">
                     <p>
                         The reason why the browser detection and the cookie was not working on Internet Explorer
                         was because the browser blocks running scripts and Active X Controls. So, you need to 
@@ -85,6 +89,88 @@
                     </code>
 
                 </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>CSS code in Internet Explorer</h2>
+                    <p>
+                        Another example of code working differently on web-browsers is the 
+                        way my website is rendered in Internet Explorer and Microsoft Edge.
+                        In IE not all of the CSS rules have been rendered onto my webpage, 
+                        for example: the background of the webpage is white rather than black;
+                        the text of the header and navigation bar is black and not aqua. This 
+                        is shown in the screenshots below:
+
+                    </p>
+                    <div class="imgTitle">
+                        <img src="cssIssueIE.PNG" alt="cssIE" width="auto" height="auto">
+                        <img src="cssIssueME.PNG" alt="cssME" width="auto" height="auto">
+
+                    </div>
+                    <p>
+                        The cause of this issue is that Internet Explorer only applies the first 
+                        31 style tags and 4,095 rules; if there are more than these numbers, they
+                        are not applied. Furthermore, if the an external CSS style sheet is 
+                        more than "3 levels deep" it will be ignored.
+                    </p>
+                    <p>
+                        Also Internet Explorer does not seem compatible with CSS variables, as 
+                        the colours I stored under variable names do not appear. So in future
+                        if you were building a website just for IE, potentially avoid using 
+                        variables for colours.
+                    </p>
+                    ><a class="highlight" href="https://docs.microsoft.com/en-us/troubleshoot/browsers/css-styles-webpage-renders-wrongly#more-information">Microsoft CSS page rendering issues</a></p>
+                    <p>
+                        There are two solutions for this issue, limit the amount of style rules and tags 
+                        the website uses, which will make the webpages look incredibly basic and boring,
+                        which is what IE has done already, or the user will need to download a more up to date web-browser, 
+                        such as Google Chrome or Microsoft Edge. 
+                    </p>
+                    <p>
+                        Here is some of the CSS code I used to create my Website/ webpages:
+                    </p>
+                    <code>
+<pre>
+    :root{
+        --main-bg-color:#0B0C10;
+        --txt-border-color:#66FCF1;
+    }
+    a.highlight:hover{
+        color: aqua;
+    }
+    
+    code{
+        font-family: monospace;
+        color: chocolate;
+        
+    }
+    
+    *{
+        box-sizing: border-box;
+    }
+    
+    .header{
+        background-color: var(--main-bg-color);
+        padding: 20px;
+        text-align: center;
+        
+       
+    }
+    
+    h1{
+        color: var(--txt-border-color);
+        text-align: center;
+        font: bold 200% fantasy;
+    }
+</pre>
+                    </code>
+
+                    
+
+                </div>
+                
+                
+
             </div>
         </div>
     </body>
