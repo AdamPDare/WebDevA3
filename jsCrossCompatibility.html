@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,intial-scale=1">
         <link href="layoutsheet.css" rel="stylesheet">
-        <title>Index</title>
+        <title>Cross Compatibility</title>
+
        
         
         <style>
+            img{
+                padding: 30px;
+            }
 
         </style>
     </head>
@@ -18,5 +22,61 @@
         </div>
         
         <div style="padding-left:16px"></div>
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>Browser Detection</h2>
+                    <p>
+                        The Browser Detection I implemented onto my website works differently
+                        for each web-browser as it detects the one the user is using and will output 
+                        true and false, which will be different according to the engine the web-browser uses.
+                        For example: Microsoft Edge and Google Chrome both output Chrome due to using the 
+                        same chromium search engine.
+                    </p>
+                    <p>
+                        The issue I was experiencing was, in Internet Explorer 11, the browser 
+                        detection was not working immediately when I clicked the button, whereas
+                        chrome and microsoft edge did work. Also my cookie was not working in internet 
+                        explorer either/ did not pop up before the webpage was loaded.
+                        This is shown in the screenshots below, on the left is the issue in IE 
+                        and on the right is shows the browser detection working correctly in 
+                        Microsoft Edge.
+                    </p>
+
+                    <img src="browserDetectionFailinginIE.PNG" alt="BDIE" width="250" height="250">
+                    <img src="bdWorkingOnME.PNG" alt="BDME" width="250" height="250">
+
+                    <code>
+<pre>
+    function checkBrowser(){
+        let userAgentString= navigator.userAgent;
+        let chromeAgent = userAgentString.indexOf("Chrome")>-1;
+        let IExplorerAgent=userAgentString.indexOf("MSIE")>-1||
+        userAgentString.indexOf("rv:")>-1;
+        let firefoxagent=userAgentString.indexOf("Firefox")>-1;
+        let safariAgent=userAgentString.indexOf("Safari")>-1;
+
+        if((chromeAgent)&&(safariAgent)){
+            safariAgent=false;
+        }
+
+        let operaAgent=userAgentString.indexOf("OP")>-1;
+
+        if((chromeAgent)&&(operaAgent)){
+            chromeAgent=false;
+        }
+
+        document.querySelector(".output-safari").textContent=safariAgent;
+        document.querySelector(".output-chrome").textContent=chromeAgent;
+        document.querySelector(".output-ie").textContent=IExplorerAgent;
+        document.querySelector(".output-opera").textContent=operaAgent;
+        document.querySelector(".output-firefox").textContent=firefoxagent;
+    }
+</pre>
+                    </code>
+
+                </div>
+            </div>
+        </div>
     </body>
 </html>
