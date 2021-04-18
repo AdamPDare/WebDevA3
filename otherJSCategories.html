@@ -37,6 +37,7 @@
             <span class="output-opera"></span>
         </p>
         <button onclick="checkBrowser()">Detect Button</button>
+        <button onclick="browser()">Browser Alert</button>
 
 
         <script>
@@ -63,6 +64,10 @@
                 document.querySelector(".output-ie").textContent=IExplorerAgent;
                 document.querySelector(".output-opera").textContent=operaAgent;
                 document.querySelector(".output-firefox").textContent=firefoxagent;
+            }
+
+            function browser(){
+                alert(navigator.userAgent);
             }
 
             
